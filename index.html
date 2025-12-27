@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TrustedHealthJourneys - Premium ästhetische Behandlungen im Ausland. BBL, Mommy Makeover, Smile Makeover, Haartransplantation. Bis zu 70% sparen.">
+  <title>TrustedHealthJourneys - Premium Ästhetische Behandlungen im Ausland</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #0066cc;
+      --primary-dark: #004999;
+      --accent: #00A896;
+      --light: #F8FAFB;
+      --dark: #1A1A1A;
+      --gray: #4A5568;
+      --whatsapp: #25D366;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* HEADER */
+    .header {
+      background: white;
+      padding: 15px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .header-btn {
+      background: var(--whatsapp);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .header-btn:hover {
+      background: #1fb855;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+      opacity: 0.95;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 15px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #008274;
+      transform: translateY(-2px);
+    }
+
+    .btn-whatsapp {
+      background: var(--whatsapp);
+      color: white;
+    }
+
+    .btn-whatsapp:hover {
+      background: #1fb855;
+      transform: translateY(-2px);
+    }
+
+    /* STATS */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 60px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 42px;
+      font-weight: 800;
+      color: var(--accent);
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 16px;
+      opacity: 0.9;
+    }
+
+    /* TREATMENTS */
+    .treatments {
+      padding: 80px 20px;
+      background: var(--light);
+    }
+
+    .section-title {
+      font-size: 36px;
+      text-align: center;
+      margin-bottom: 15px;
+      color: var(--primary);
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--gray);
+      margin-bottom: 50px;
+      font-size: 18px;
+    }
+
+    .treatment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-bottom: 50px;
+    }
+
+    .treatment-card {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: all 0.3s;
+    }
+
+    .treatment-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+
+    .treatment-icon {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+
+    .treatment-card h3 {
+      font-size: 24px;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .treatment-price {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--accent);
+      margin: 15px 0;
+    }
+
+    .treatment-card p {
+      color: var(--gray);
+      margin-bottom: 20px;
+    }
+
+    .treatment-features {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+
+    .treatment-features li {
+      padding: 8px 0;
+      color: var(--gray);
+      display: flex;
+      align-items: start;
+      gap: 8px;
+    }
+
+    .treatment-features li:before {
+      content: "✓";
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    /* PRICE TABLE */
+    .price-table-section {
+      padding: 80px 20px;
+      background: white;
+    }
+
+    .price-table {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .price-table th {
+      background: var(--primary);
+      color: white;
+      padding: 20px;
+      text-align: left;
+      font-size: 18px;
+    }
+
+    .price-table td {
+      padding: 18px 20px;
+      border-bottom: 1px solid #eee;
+      color: var(--gray);
+    }
+
+    .price-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .price-table .price-col {
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 20px;
+      text-align: right;
+    }
+
+    /* TESTIMONIALS */
+    .testimonials {
+      padding: 80px 20px;
+      background: var(--light);
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .testimonial {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .testimonial-stars {
+      color: #FFA500;
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+
+    .testimonial-text {
+      color: var(--gray);
+      font-style: italic;
+      margin-bottom: 15px;
+    }
+
+    .testimonial-author {
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    /* CONTACT FORM */
+    .contact-section {
+      padding: 80px 20px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      text-align: center;
+    }
+
+    .contact-section h2 {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .contact-section > p {
+      font-size: 18px;
+      margin-bottom: 40px;
+      opacity: 0.95;
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      text-align: left;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+      font-family: inherit;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    .form-group select[multiple] {
+      height: auto;
+    }
+
+    .form-hint {
+      font-size: 13px;
+      color: var(--gray);
+      margin-top: 5px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 15px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .submit-btn:hover {
+      background: #008274;
+    }
+
+    .divider {
+      text-align: center;
+      margin: 25px 0;
+      color: var(--gray);
+      font-weight: 600;
+      position: relative;
+    }
+
+    .divider:before,
+    .divider:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 40%;
+      height: 1px;
+      background: #ddd;
+    }
+
+    .divider:before { left: 0; }
+    .divider:after { right: 0; }
+
+    /* FOOTER */
+    .footer {
+      background: #1a1a1a;
+      color: rgba(255,255,255,0.8);
+      padding: 50px 20px 20px;
+      text-align: center;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-bottom: 30px;
+      text-align: left;
+    }
+
+    .footer h4 {
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    .footer ul {
+      list-style: none;
+    }
+
+    .footer li {
+      margin-bottom: 10px;
+    }
+
+    .footer a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      color: var(--accent);
+    }
+
+    .footer-bottom {
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 14px;
+    }
+
+    /* FLOATING WHATSAPP */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background: var(--whatsapp);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(37,211,102,0.4);
+      z-index: 9999;
+      text-decoration: none;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 4px 12px rgba(37,211,102,0.4); }
+      50% { box-shadow: 0 8px 24px rgba(37,211,102,0.6); }
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
+    .whatsapp-float svg {
+      width: 35px;
+      height: 35px;
+      fill: white;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 32px; }
+      .hero p { font-size: 16px; }
+      .stats { grid-template-columns: 1fr; gap: 20px; }
+      .cta-buttons { flex-direction: column; }
+      .btn { width: 100%; justify-content: center; }
+      .treatment-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .contact-form { padding: 25px; }
+      .price-table { font-size: 14px; }
+      .price-table th, .price-table td { padding: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">TrustedHealthJourneys</div>
+        <a href="https://wa.me/491631091005?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Beratung." class="header-btn" target="_blank">
+          💬 WhatsApp Chat
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1>Premium Ästhetische Behandlungen im Ausland</h1>
+      <p>BBL, Mommy Makeover, Smile Makeover, Haartransplantation & mehr<br>Bis zu 70% sparen • ISO-zertifizierte Kliniken • 5-Sterne-Service</p>
+      
+      <div class="cta-buttons">
+        <a href="#kontakt" class="btn btn-primary">📋 Kostenlose Beratung</a>
+        <a href="https://wa.me/491631091005?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20kostenlose%20Beratung." class="btn btn-whatsapp" target="_blank">💬 WhatsApp Chat</a>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-number">450+</span>
+          <span class="stat-label">Zufriedene Patienten</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">15+</span>
+          <span class="stat-label">Partnerkliniken</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">4.9/5</span>
+          <span class="stat-label">Ø Bewertung</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TREATMENTS -->
+  <section class="treatments">
+    <div class="container">
+      <h2 class="section-title">Unsere Behandlungen</h2>
+      <p class="section-subtitle">Alle Preise inkl. Flug, 5-Sterne-Hotel, VIP-Transfer & Nachsorge</p>
+
+      <div class="treatment-grid">
+        <!-- SMILE MAKEOVER -->
+        <div class="treatment-card">
+          <div class="treatment-icon">😁</div>
+          <h3>Smile Makeover</h3>
+          <div class="treatment-price">ab 3.000 €</div>
+          <p>Veneers, Kronen, Implantate für Ihr perfektes Hollywood-Lächeln</p>
+          <ul class="treatment-features">
+            <li>Digitale 3D-Planung</li>
+            <li>Premium E-Max Keramik</li>
+            <li>5 Jahre Garantie</li>
+          </ul>
+          <a href="https://wa.me/491631091005?text=Ich%20interessiere%20mich%20f%C3%BCr%20Smile%20Makeover" class="btn btn-whatsapp" style="width:100%" target="_blank">💬 WhatsApp</a>
+        </div>
+
+        <!-- HAARTRANSPLANTATION -->
+        <div class="treatment-card">
+          <div class="treatment-icon">💇</div>
+          <h3>Haartransplantation</h3>
+          <div class="treatment-price">ab 1.500 €</div>
+          <p>FUE & DHI für natürliche, dauerhafte Ergebnisse</p>
+          <ul class="treatment-features">
+            <li>Mikro-Implantation</li>
+            <li>Natürliche Haarlinie</li>
+            <li>Lebenslange Garantie</li>
+          </ul>
+          <a href="https://wa.me/491631091005?text=Ich%20interessiere%20mich%20f%C3%BCr%20Haartransplantation" class="btn btn-whatsapp" style="width:100%" target="_blank">💬 WhatsApp</a>
+        </div>
+
+        <!-- BBL -->
+        <div class="treatment-card">
+          <div class="treatment-icon">👙</div>
+          <h3>Brazilian Butt Lift</h3>
+          <div class="treatment-price">ab 4.500 €</div>
+          <p>Natürliche Körperkonturierung mit Eigenfett</p>
+          <ul class="treatment-features">
+            <li>VASER-Liposuktion</li>
+            <li>360° Konturierung</li>
+            <li>Dauerhaftes Ergebnis</li>
+          </ul>
+          <a href="https://wa.me/491631091005?text=Ich%20interessiere%20mich%20f%C3%BCr%20Brazilian%20Butt%20Lift" class="btn btn-whatsapp" style="width:100%" target="_blank">💬 WhatsApp</a>
+        </div>
+
+        <!-- MOMMY MAKEOVER -->
+        <div class="treatment-card">
+          <div class="treatment-icon">👶</div>
+          <h3>Mommy Makeover</h3>
+          <div class="treatment-price">ab 6.000 €</div>
+          <p>Bauchdeckenstraffung + Brustop in einer OP</p>
+          <ul class="treatment-features">
+            <li>Abdominoplastik</li>
+            <li>Bruststraffung/-vergrößerung</li>
+            <li>Komplette Transformation</li>
+          </ul>
+          <a href="https://wa.me/491631091005?text=Ich%20interessiere%20mich%20f%C3%BCr%20Mommy%20Makeover" class="btn btn-whatsapp" style="width:100%" target="_blank">💬 WhatsApp</a>
+        </div>
+
+        <!-- LIPOSUKTION -->
+        <div class="treatment-card">
+          <div class="treatment-icon">💪</div>
+          <h3>Liposuktion</h3>
+          <div class="treatment-price">ab 2.500 €</div>
+          <p>Präzise Fettabsaugung an Problemzonen</p>
+          <ul class="treatment-features">
+            <li>HD-Liposculpture</li>
+            <li>Mehrere Zonen möglich</li>
+            <li>Minimale Narben</li>
+          </ul>
+          <a href="https://wa.me/491631091005?text=Ich%20interessiere%20mich%20f%C3%BCr%20Liposuktion" class="btn btn-whatsapp" style="width:100%" target="_blank">💬 WhatsApp</a>
+        </div>
+
+        <!-- NASENKORREKTUR -->
+        <div class="treatment-card">
+          <div class="treatment-icon">👃</div>
+          <h3>Nasenkorrektur</h3>
+          <div class="treatment-price">ab 3.200 €</div>
+          <p>Ästhetische & funktionale Rhinoplastik</p>
+          <ul class="treatment-features">
+            <li>3D-Simulation vorab</li>
+            <li>Offene/geschlossene Technik</li>
+            <li>Atmungsverbesserung</li>
+          </ul>
+          <a href="https://wa.me/491631091005?text=Ich%20interessiere%20mich%20f%C3%BCr%20Nasenkorrektur" class="btn btn-whatsapp" style="width:100%" target="_blank">💬 WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICE TABLE -->
+  <section class="price-table-section">
+    <div class="container">
+      <h2 class="section-title">Komplette Preisübersicht</h2>
+      <p class="section-subtitle">Alle Preise inkl. Flug, 5-Sterne-Hotel, VIP-Transfer & deutschsprachiger Betreuung</p>
+
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th>Behandlung</th>
+            <th>Preis</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Zahnbehandlungen</strong></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Einzelner Implantat-Zahn</td>
+            <td class="price-col">300–600 €</td>
+          </tr>
+          <tr>
+            <td>Veneers / Smile Makeover (Ober- & Unterkiefer)</td>
+            <td class="price-col">1.800–3.500 €</td>
+          </tr>
+          <tr>
+            <td>All-on-4 pro Kiefer</td>
+            <td class="price-col">5.300–5.900 €</td>
+          </tr>
+          <tr>
+            <td>Kronen (Zirkonium/Keramik)</td>
+            <td class="price-col">300 €</td>
+          </tr>
+          <tr>
+            <td><strong>Schönheits-OPs</strong></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Nasenkorrektur (Rhinoplastik)</td>
+            <td class="price-col">2.000–3.500 €</td>
+          </tr>
+          <tr>
+            <td>Brustvergrößerung</td>
+            <td class="price-col">3.000–4.500 €</td>
+          </tr>
+          <tr>
+            <td>Brustlift / Bruststraffung</td>
+            <td class="price-col">3.000–4.000 €</td>
+          </tr>
+          <tr>
+            <td>Fettabsaugung (Liposuktion)</td>
+            <td class="price-col">2.500–4.000 €</td>
+          </tr>
+          <tr>
+            <td>Brazilian Butt Lift (BBL)</td>
+            <td class="price-col">3.700–5.000 €</td>
+          </tr>
+          <tr>
+            <td>Bauchdeckenstraffung</td>
+            <td class="price-col">3.500–4.000 €</td>
+          </tr>
+          <tr>
+            <td>Facelift</td>
+            <td class="price-col">ab 3.000 €</td>
+          </tr>
+          <tr>
+            <td>Augenlid-OP (Blepharoplastik)</td>
+            <td class="price-col">2.100 €</td>
+          </tr>
+          <tr>
+            <td>Haartransplantation (FUE/DHI)</td>
+            <td class="price-col">ab 1.500 €</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="text-align:center; margin-top:40px;">
+        <a href="https://wa.me/491631091005?text=Ich%20m%C3%B6chte%20ein%20individuelles%20Angebot%20f%C3%BCr%20meine%20Wunschbehandlung." class="btn btn-whatsapp" target="_blank">💬 Individuelles Angebot anfordern</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="container">
+      <h2 class="section-title">Das sagen unsere Patienten</h2>
+      <p class="section-subtitle">Echte Erfahrungsberichte von zufriedenen Patienten</p>
+
+      <div class="testimonial-grid">
+        <div class="testimonial">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Mein Smile Makeover hat mein Leben verändert! Die Betreuung war erstklassig und das Ergebnis ist perfekt. Ich kann TrustedHealthJourneys nur weiterempfehlen!"</p>
+          <p class="testimonial-author">Sarah M., München</p>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Die Haartransplantation verlief reibungslos. Nach 8 Monaten sieht alles komplett natürlich aus. Das Team hat mich durchgehend auf Deutsch betreut!"</p>
+          <p class="testimonial-author">Michael K., Berlin</p>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Mein BBL-Ergebnis ist fantastisch! Der gesamte Prozess wurde perfekt organisiert – Flug, Hotel, Transfer, alles inklusive. Einfach top!"</p>
+          <p class="testimonial-author">Julia D., Zürich</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="kontakt">
+    <div class="container">
+      <h2>Kostenlose Beratung anfragen</h2>
+      <p>Füllen Sie das Formular aus – wir melden uns innerhalb von 24 Stunden</p>
+
+      <div class="contact-form">
+        <form id="contactForm">
+          <div class="form-group">
+            <label>Ihr Name *</label>
+            <input type="text" id="name" required placeholder="Max Mustermann">
+          </div>
+
+          <div class="form-group">
+            <label>E-Mail *</label>
+            <input type="email" id="email" required placeholder="max@beispiel.de">
+          </div>
+
+          <div class="form-group">
+            <label>Telefon / WhatsApp</label>
+            <input type="tel" id="phone" placeholder="+49 123 4567890">
+          </div>
+
+          <div class="form-group">
+            <label>Gewünschte Behandlung(en) *</label>
+            <select id="treatment" multiple required size="8">
+              <option value="Smile Makeover">Smile Makeover / Zahnästhetik</option>
+              <option value="Haartransplantation">Haartransplantation (FUE/DHI)</option>
+              <option value="Brazilian Butt Lift">Brazilian Butt Lift (BBL)</option>
+              <option value="Mommy Makeover">Mommy Makeover</option>
+              <option value="Liposuktion">Liposuktion (Fettabsaugung)</option>
+              <option value="Nasenkorrektur">Nasenkorrektur (Rhinoplastik)</option>
+              <option value="Brustvergrößerung">Brustvergrößerung</option>
+              <option value="Andere">Andere Behandlung</option>
+            </select>
+            <p class="form-hint">Halten Sie Strg (Windows) oder Cmd (Mac) für Mehrfachauswahl gedrückt</p>
+          </div>
+
+          <div class="form-group">
+            <label>Ihre Nachricht</label>
+            <textarea id="message" rows="4" placeholder="Erzählen Sie uns mehr über Ihre Wünsche..."></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">📋 Kostenlose Beratung anfragen</button>
+        </form>
+
+        <div class="divider">ODER</div>
+
+        <a href="https://wa.me/491631091005?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20kostenlose%20Beratung." class="btn btn-whatsapp" style="width:100%; justify-content:center;" target="_blank">
+          💬 Direkt per WhatsApp kontaktieren
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>TrustedHealthJourneys</h4>
+          <p>Ihre vertrauenswürdige Plattform für ästhetische Behandlungen im Ausland.</p>
+        </div>
+        <div>
+          <h4>Behandlungen</h4>
+          <ul>
+            <li><a href="#kontakt">Smile Makeover</a></li>
+            <li><a href="#kontakt">Haartransplantation</a></li>
+            <li><a href="#kontakt">BBL</a></li>
+            <li><a href="#kontakt">Mommy Makeover</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Unternehmen</h4>
+          <ul>
+            <li><a href="#kontakt">Über uns</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+            <li><a href="#kontakt">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Rechtliches</h4>
+          <ul>
+            <li><a href="#">Impressum</a></li>
+            <li><a href="#">Datenschutz</a></li>
+            <li><a href="#">AGB</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 TrustedHealthJourneys. Alle Rechte vorbehalten.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/491631091005?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Beratung." class="whatsapp-float" target="_blank">
+    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 0C7.164 0 0 7.163 0 16c0 2.825.738 5.488 2.025 7.788L.05 31.95l8.3-2.05A15.915 15.915 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm9.488 22.713c-.4 1.125-2.3 2.087-3.2 2.2-.787.088-1.813.137-2.925-.188-.675-.2-1.55-.462-2.663-.9-4.65-1.838-7.7-6.5-7.925-6.813-.225-.312-1.838-2.45-1.838-4.675 0-2.225 1.163-3.313 1.575-3.763.413-.45.9-.563 1.2-.563.3 0 .6.013.863.025.275.013.65-.1.988.75.412 1.038 1.337 3.263 1.45 3.5.113.237.188.512.038.825-.15.312-.225.5-.45.775-.225.275-.475.613-.675.825-.225.225-.463.462-.2.9.263.438 1.163 1.925 2.5 3.113 1.725 1.525 3.175 2 3.625 2.225s.712.188 1-.112c.287-.3 1.237-1.438 1.575-1.938.337-.5.675-.413 1.137-.25.463.163 2.925 1.375 3.425 1.625s.825.375.95.588c.125.212.125 1.225-.275 2.35z"/>
+    </svg>
+  </a>
+
+  <script>
+    // Form submission - send data to WhatsApp (fixed encoding)
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const treatmentSelect = document.getElementById('treatment');
+      const selectedTreatments = Array.from(treatmentSelect.selectedOptions).map(opt => opt.value);
+      const message = document.getElementById('message').value.trim();
+
+      // Build plaintext message and encode once for the URL
+      let whatsappMsg = '*Neue Beratungsanfrage*\n\n';
+      whatsappMsg += `👤 Name: ${name}\n`;
+      whatsappMsg += `📧 Email: ${email}\n`;
+      if (phone) whatsappMsg += `📱 Telefon: ${phone}\n`;
+      whatsappMsg += '\n💉 Gewünschte Behandlungen:\n';
+      selectedTreatments.forEach(t => {
+        whatsappMsg += `• ${t}\n`;
+      });
+      if (message) whatsappMsg += `\n💬 Nachricht: ${message}`;
+
+      const url = `https://wa.me/491631091005?text=${encodeURIComponent(whatsappMsg)}`;
+
+      // Open WhatsApp
+      window.open(url, '_blank');
+
+      // Reset form and notify user
+      this.reset();
+      alert('✅ Ihre Anfrage wird an WhatsApp gesendet. Wir melden uns innerhalb von 24 Stunden!');
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if(target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
